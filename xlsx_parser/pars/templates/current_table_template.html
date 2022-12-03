@@ -1,0 +1,43 @@
+
+<table border="1" width="100%">
+    <tr>
+        <td rowspan="3" align="center">Date</td>
+        <td rowspan="3" align="center">Source ID </td>
+        <td rowspan="3" align="center">Company</td>
+        <td colspan="4" align="center">Fact</td>
+        <td colspan="4" align="center">Forecast</td>
+    </tr>
+
+    <tr>
+        <td colspan="2" align="center" >Qliq</td>
+        <td colspan="2" align="center">Qoil</td>
+        <td colspan="2" align="center">Qliq</td>
+        <td colspan="2" align="center">Qoil</td>
+    </tr>
+   <tr>
+        <td align="center">data1</td>
+        <td align="center">data2</td>
+        <td align="center">data1</td>
+        <td align="center">data2</td>
+        <td align="center">data1</td>
+        <td align="center">data2</td>
+        <td align="center">data1</td>
+        <td align="center">data2</td>
+    </tr>
+    {% for row in current_table %}
+    <tr>
+        <td align="center">{{row.date}}</td>
+        <td align="center">{{row.source_id}}</td>
+        <td align="center">{{row.company}}</td>
+        <td align="center">{{row.fact_qliq_data1}}</td>
+        <td align="center">{{row.fact_qliq_data2}}</td>
+        <td align="center">{{row.fact_qoil_data1}}</td>
+        <td align="center">{{row.fact_qoil_data2}}</td>
+        <td align="center">{{row.forecast_qliq_data1}}</td>
+        <td align="center">{{row.forecast_qliq_data2}}</td>
+        <td align="center">{{row.forecast_qoil_data1}}</td>
+        <td align="center">{{row.forecast_qoil_data2}}</td>
+
+    </tr>
+    {% endfor %}
+</table>

@@ -1,0 +1,11 @@
+<table border="1" width="100%">
+        <th colspan="2"> Qoil forecast data1+data2 </th>
+
+    {% for row in stat_data_qoil_forecast %}
+    <tr align="center" >
+        <td align="center" width="200px">{{row.date}}</td>
+        <td align="center" width="100px">{{row.total_qoil_forecast}}</td> </tr>
+    {% endfor %}
+
+
+</table>

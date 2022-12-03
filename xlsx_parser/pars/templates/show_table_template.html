@@ -1,0 +1,21 @@
+<h1> Добро пожаловать в парсер xlsx</h1>
+<br>
+<a href="">главная страница</a>
+<br>
+
+{% if current_table != '' %}
+<h2>Таблица "{{table_name}}"</h2>
+{% include 'current_table_template.html' %}
+{% endif %}
+{% if stat_data_qliq_fact != '' %}
+<table width="100%" border="0">
+    <tr>
+        <td>{% include 'qliq_fact_table_template.html' %}</td>
+        <td>{% include 'qoil_fact_table_template.html' %}</td>
+        <td>{% include 'qliq_forecast_table_template.html' %}</td>
+        <td>{% include 'qoil_forecast_table_template.html' %}</td>
+    </tr>
+</table>
+{% endif %}
+
+

@@ -1,0 +1,11 @@
+<table border="1" width="100%">
+    <th colspan="2"> Qliq fact data1+data2 </th>
+
+    {% for row in stat_data_qliq_fact %}
+    <tr align="center">
+        <td align="center" width="200px">{{row.date}}</td>
+        <td align="center" width="100px">{{row.total_qliq_fact}}</td> </tr>
+    {% endfor %}
+
+
+</table>

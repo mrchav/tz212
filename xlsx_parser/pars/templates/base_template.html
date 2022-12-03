@@ -1,0 +1,29 @@
+<h1> Добро пожаловать в парсер xlsx</h1>
+<br>
+<form action="/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="your_name">Загрузите XLSX таблицу с данными: </label>
+    <input id="file" type="file" name="tablefile"><br><br>
+    <input type="submit" value="загрузить фаил">
+</form>
+{% if current_table != '' %}
+<h2>Последняя загруженная таблица</h2>
+{% include 'current_table_template.html' %}
+{% endif %}
+{% if stat_data_qliq_fact != '' %}
+
+<table width="100%" border="0">
+    <tr>
+        <td>{% include 'qliq_fact_table_template.html' %}</td>
+        <td>{% include 'qoil_fact_table_template.html' %}</td>
+        <td>{% include 'qliq_forecast_table_template.html' %}</td>
+        <td>{% include 'qoil_forecast_table_template.html' %}</td>
+    </tr>
+</table>
+{% endif %}
+
+{% for row in last_tables %}
+{{row.name}} <a href="{% url 'table' row.pk %}"> смотреть таблицу</a>
+<br>
+{% endfor %}
+
